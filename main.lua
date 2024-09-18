@@ -1,15 +1,18 @@
-local N = 50
+local N = 50 -- turn into to io.input for main loop
 local M = 50
 local bools = {" ","X"}
 
 local uni = {}
 
+-- directional array that allows pixel X to
+-- check for another X nearby.
 local dir = {
 	{-1, -1}, {0, -1}, {1, -1},
 	{1, 0}, {1, 1},
 	{0, 1}, {-1, 1}, {-1, 0},
 }
 
+--Creates a new universe.
 local function newUniverse(density) 
     local newUni = {}
     for x=1, N do
@@ -25,6 +28,7 @@ local function newUniverse(density)
     return newUni
 end
 
+--Uses dir to count nearby neighbors
 -- local function countNeighbors(universe, x, y)
 --     local count = 0
 --     for dir =2,20 do
@@ -32,6 +36,8 @@ end
 --     end
 --     return count
 -- end
+
+--apply random boolean
 for x=1, N do
     uni[x] = {}
     for y=1, M do
@@ -39,6 +45,7 @@ for x=1, N do
     end
 end
 
+--print random boolean
 for x=1, N do
     for y=1, M do
         io.write(tostring(uni[x][y]) .. " ")
