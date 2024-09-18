@@ -14,7 +14,7 @@ The project generates a grid universe where cells evolve over time based on spec
 
 ## How to Use
 
-` git clone https://github.com/Sieep-Coding/game-of-life-lua`
+`git clone https://github.com/Sieep-Coding/game-of-life-lua`
 
 `cd game-of-life-lua`
 
