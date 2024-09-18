@@ -25,13 +25,13 @@ local function newUniverse(density)
     return newUni
 end
 
-local function countNeighbors(universe, x, y)
-    local count = 0
-    for dir =2,20 do
-        local row = (y + ) 
-    end
-    return count
-end
+-- local function countNeighbors(universe, x, y)
+--     local count = 0
+--     for dir =2,20 do
+--         local row = (y + ) 
+--     end
+--     return count
+-- end
 for x=1, N do
     uni[x] = {}
     for y=1, M do
