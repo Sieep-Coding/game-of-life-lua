@@ -12,6 +12,12 @@ local dir = {
 	{0, 1}, {-1, 1}, {-1, 0},
 }
 
+--Get user input
+local function getUserInput(input)
+  input = io.read()
+  return input
+end
+
 --Creates a new universe.
 local function newUniverse(density) 
     local newUni = {}
