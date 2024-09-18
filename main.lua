@@ -4,6 +4,12 @@ local bools = {" ","X"}
 
 local uni = {}
 
+local dir = {
+	{-1, -1}, {0, -1}, {1, -1},
+	{1, 0}, {1, 1},
+	{0, 1}, {-1, 1}, {-1, 0},
+}
+
 local function newUniverse(density) 
     local newUni = {}
     for x=1, N do
@@ -21,8 +27,8 @@ end
 
 local function countNeighbors(universe, x, y)
     local count = 0
-    for i = 1, 10, 1 do
-        
+    for dir =2,20 do
+        local row = (y + ) 
     end
     return count
 end
