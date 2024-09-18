@@ -1,6 +1,6 @@
-local N = 5
-local M = 5
-local bools = {true,false}
+local N = 25
+local M = 25
+local bools = {"","X"}
 
 local uni = {x = bools[math.random(1,2)], y = bools[math.random(1,2)]}
 for x=1, N do
