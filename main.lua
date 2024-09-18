@@ -18,6 +18,12 @@ local function getUserInput(input)
   return input
 end
 
+--Get Terminal size
+local function(width,height)
+  local width = io.popen("")
+  return width,height
+end
+
 --Creates a new universe.
 local function newUniverse(density) 
     local newUni = {}
