@@ -1,4 +1,4 @@
-local N = 50 -- turn into to io.input for main loop
+local N = 50 
 local M = 50
 local bools = {" ","X"}
 
@@ -54,20 +54,19 @@ local function countNeighbors(universe, x, y)
 end
 
 
--- local function main()
   
   --apply random boolean
-  for x=1, N do
-      uni[x] = {}
-      for y=1, M do
-          uni[x][y] = bools[math.random(1,2)]
-      end
-  end
+for x=1, N do
+    uni[x] = {}
+    for y=1, M do
+        uni[x][y] = bools[math.random(1,2)]
+    end
+end
 
-  --print random boolean
-  for x=1, N do
-      for y=1, M do
-          io.write(tostring(uni[x][y]) .. " ")
-      end
-      print()
-  end
+--print random boolean
+for x=1, N do
+    for y=1, M do
+        io.write(tostring(uni[x][y]) .. " ")
+    end
+    print()
+end
