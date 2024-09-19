@@ -7,9 +7,9 @@ local uni = {}
 -- directional array that allows pixel X to
 -- check for another X nearby.
 local dir = {
-	{-1, -1}, {0, -1}, {1, -1},
-	{1, 0}, {1, 1},
-	{0, 1}, {-1, 1}, {-1, 0},
+    {-1, -1}, {0, -1}, {1, -1},
+    {1, 0}, {1, 1},
+    {0, 1}, {-1, 1}, {-1, 0},
 }
 
 --Get user input
@@ -19,10 +19,10 @@ local function getUserInput(input)
 end
 
 --Get Terminal size
-local function(width,height)
-  local width = io.popen("")
-  return width,height
-end
+-- local function(height)
+--   local width = io.popen("")
+--   return width,height
+-- end
 
 --Creates a new universe.
 local function newUniverse(density) 
@@ -40,17 +40,21 @@ local function newUniverse(density)
     return newUni
 end
 
---Uses dir to count nearby neighbors
--- local function countNeighbors(universe, x, y)
---     local count = 0
---     for dir =2,20 do
---         local row = (y + ) 
---     end
---     return count
--- end
+--Uses dir to check for nearby neighbors
+local function countNeighbors(universe, x, y)
+    local count = 0
+    for i =1, 8 do
+        local row = (x + dir[i][1] - 1) % N + 1
+        local col = (y + dir[i][2] - 1) % M + 1
+        if universe[row][col] == "X" then
+            count = count + 1
+        end
+    end
+    return count
+end
 
 
-local function main()
+-- local function main()
   
   --apply random boolean
   for x=1, N do
@@ -67,4 +71,3 @@ local function main()
       end
       print()
   end
-end
