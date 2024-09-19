@@ -1,5 +1,7 @@
 # Game of Life in Lua
 
+![License: UNLICENSE](https://img.shields.io/badge/License-UNLICENSE-blue.svg)
+
 This is a Lua-based implementation of Conway's Game of Life. 
 
 The project generates a grid universe where cells evolve over time based on specific rules for survival, reproduction, and death.
