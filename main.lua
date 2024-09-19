@@ -53,6 +53,11 @@ local function countNeighbors(universe, x, y)
     return count
 end
 
+local function updateUniverse(universe, survivalRule, birthRule )
+    local newUni = newUniverse(0.78)
+    
+    return newUni
+end
 
   
   --apply random boolean
