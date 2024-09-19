@@ -53,9 +53,25 @@ local function countNeighbors(universe, x, y)
     return count
 end
 
-local function updateUniverse(universe, survivalRule, birthRule )
-    local newUni = newUniverse(0.78)
-    
+local function updateUniverse(universe, survivalRule, birthRule)
+    local newUni = newUniverse()
+    for x=1, N do
+        for y=1, M do
+            local neighbors = countNeighbors(universe, x, y)
+            local cell = universe[x][y]
+            if cell == "X" then
+                if neighbors < 2 and neighbors > 3 then
+                    newUni[x][y] = " " -- cell dies
+                else 
+                    newUni[x][y] = "X"
+                end
+            else
+                if neighbors == 3 then
+                    newUni[x][y] = "X"
+                end
+            end
+        end
+    end
     return newUni
 end
 
