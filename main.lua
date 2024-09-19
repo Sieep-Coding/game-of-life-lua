@@ -53,6 +53,7 @@ local function countNeighbors(universe, x, y)
     return count
 end
 
+-- update Universe based on the rules of the Game of Life
 local function updateUniverse(universe, survivalRule, birthRule)
     local newUni = newUniverse()
     for x=1, N do
@@ -80,7 +81,7 @@ end
 for x=1, N do
     uni[x] = {}
     for y=1, M do
-        uni[x][y] = bools[math.random(1,2)]
+        uni[x][y] = newUniverse(0.5)
     end
 end
 
