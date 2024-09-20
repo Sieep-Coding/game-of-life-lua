@@ -30,6 +30,25 @@ end
     return density
 end
 
+local function getUserInputGeneration(generations)
+  
+    local generations 
+   while true do
+      io.write("Number of Generations (integer) ")
+      generations = io.read()
+      generations = tonumber(generations)
+      if generations == nil then
+          print("Please enter a number.")
+      elseif generations < 0 then
+          print("Please Enter a number greater than 0 ")
+      else
+          break
+      end
+  end
+      io.write("Selected:", generations, "!\n")
+      return generations
+  end
+
 --Get Terminal size
 -- local function(height)
 --   local width = io.popen("")
@@ -107,7 +126,7 @@ local function sleep(n)
 -- main loop
 local density = getUserInputDensity()
 uni = newUniverse(density)
-local generations = 5
+local generations = getUserInputGeneration()
 for gen = 1, generations do
     print("Generation:", gen)
     printUniverse(uni)
