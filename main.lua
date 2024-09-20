@@ -1,7 +1,5 @@
 local N = 50 
 local M = 50
-local bools = {" ","X"}
-
 local uni = {}
 
 -- directional array that allows pixel X to
