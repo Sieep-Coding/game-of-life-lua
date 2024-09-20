@@ -6,6 +6,9 @@ This is a Lua-based implementation of Conway's Game of Life.
 
 The project generates a grid universe where cells evolve over time based on specific rules for survival, reproduction, and death.
 
+# See it in action
+![](https://github.com/Sieep-Coding/game-of-life-lua/blob/main/lua-gol.gif)
+
 ## Features
 
 - Customizable grid size (N x M)
