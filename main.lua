@@ -118,9 +118,9 @@ local function printUniverse(universe)
     end
 end
 
-local function sleep(n)
-    if n > 0 then os.execute("ping -n " .. tonumber(n+1) .. " localhost > NUL") end
-end
+-- local function sleep(n)
+--     if n > 0 then os.execute("ping -n " .. tonumber(n+1) .. " localhost > NUL") end
+-- end
   
 
 -- main loop
@@ -131,5 +131,5 @@ for gen = 1, generations do
     print("Generation:", gen)
     printUniverse(uni)
     uni = updateUniverse(uni, density)
-    sleep(1)
+    -- sleep(1)
 end
