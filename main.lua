@@ -13,9 +13,23 @@ local dir = {
 }
 
 --Get user input
-local function getUserInput(input)
-  input = io.read()
-  return input
+local function getUserInputDensity(density)
+  
+  local density 
+ while true do
+    io.write("Universe Density (Float) ")
+    density = io.read()
+    density = tonumber(density)
+    if density == nil then
+        print("Please enter a number between 0 and 1.")
+    elseif density < 0 or density > 1 then
+        print("Please Enter a number between 0 and 1 ")
+    else
+        break
+    end
+end
+    io.write("Selected:", density, "!\n")
+    return density
 end
 
 --Get Terminal size
@@ -81,7 +95,7 @@ end
 for x=1, N do
     uni[x] = {}
     for y=1, M do
-        uni[x][y] = newUniverse(0.5)
+        uni[x][y] = newUniverse(getUserInputDensity())
     end
 end
 
