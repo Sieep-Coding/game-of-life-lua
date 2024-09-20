@@ -75,8 +75,10 @@ local function updateUniverse(universe, survivalRule, birthRule)
             local neighbors = countNeighbors(universe, x, y)
             local cell = universe[x][y]
             if cell == "X" then
-                if neighbors < 2 and neighbors > 3 then
+                if neighbors < 2 then
                     newUni[x][y] = " " -- cell dies
+                elseif neighbors > 3 then
+                    newUni[x][y] = " "
                 else 
                     newUni[x][y] = "X"
                 end
@@ -95,7 +97,7 @@ end
 for x=1, N do
     uni[x] = {}
     for y=1, M do
-        uni[x][y] = newUniverse(getUserInputDensity())
+        uni[x][y] = newUniverse(0.01)
     end
 end
 
