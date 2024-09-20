@@ -92,19 +92,26 @@ local function updateUniverse(universe, survivalRule, birthRule)
     return newUni
 end
 
-  
-  --apply random boolean
-for x=1, N do
-    uni[x] = {}
-    for y=1, M do
-        uni[x][y] = newUniverse(0.01)
+local function printUniverse(universe)
+    for x=1, N do
+        for y=1, M do
+            io.write(tostring(uni[x][y]) .. " ")
+        end
+        print()
     end
 end
 
---print random boolean
-for x=1, N do
-    for y=1, M do
-        io.write(tostring(uni[x][y]) .. " ")
-    end
-    print()
+function sleep(n)
+    os.execute("sleep" .. tonumber(n))
+end
+
+-- main loop
+local density = getUserInputDensity()
+uni = newUniverse(density)
+local generations = 1
+for gen = 1, generations do
+    print("Generation:", gen)
+    printUniverse(uni)
+    uni = updateUniverse(uni)
+    sleep(0.2)
 end
