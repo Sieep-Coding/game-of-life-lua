@@ -10,7 +10,7 @@ local dir = {
     {0, 1}, {-1, 1}, {-1, 0},
 }
 
---Get user input
+--Get user input for density
 local function getUserInputDensity(density)
   
   local density 
@@ -66,8 +66,8 @@ local function countNeighbors(universe, x, y)
 end
 
 -- update Universe based on the rules of the Game of Life
-local function updateUniverse(universe, survivalRule, birthRule)
-    local newUni = newUniverse()
+local function updateUniverse(universe, density)
+    local newUni = newUniverse(density)
     for x=1, N do
         for y=1, M do
             local neighbors = countNeighbors(universe, x, y)
@@ -93,23 +93,24 @@ end
 local function printUniverse(universe)
     for x=1, N do
         for y=1, M do
-            io.write(tostring(uni[x][y]) .. " ")
+            io.write(tostring(universe[x][y]) .. " ")
         end
         print()
     end
 end
 
-function sleep(n)
-    os.execute("sleep" .. tonumber(n))
-end
+local function sleep(n)
+    if n > 0 then os.execute("ping -n " .. tonumber(n+1) .. " localhost > NUL") end
+  end
+  
 
 -- main loop
 local density = getUserInputDensity()
 uni = newUniverse(density)
-local generations = 1
+local generations = 5
 for gen = 1, generations do
     print("Generation:", gen)
     printUniverse(uni)
-    uni = updateUniverse(uni)
-    sleep(0.2)
+    uni = updateUniverse(uni, density)
+    sleep(1)
 end
